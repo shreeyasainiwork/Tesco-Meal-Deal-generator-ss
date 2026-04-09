@@ -41,7 +41,6 @@ const snacks: Item[] = [
   { name: "Tesco Egg & Salad Cream 130g", type: "balanced", value: 3.4 },
   { name: "Tesco Vegetable Sushi Snack 70g", type: "light", value: 3.3 }
 ];
-];
 
 const drinks: Item[] = [
   { name: "For Goodness Shakes Protein Shake", type: "protein", value: 3.9 },
