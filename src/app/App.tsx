@@ -21,22 +21,41 @@ const mains: Item[] = [
   { name: "Tesco Cheese Triple Sandwich", type: "comfort", value: 3.5 },
   { name: "Tesco Chicken & Chorizo Pasta 285g", type: "comfort", value: 4.0 },
   { name: "Tesco Tuna Crunch Sub", type: "balanced", value: 3.7 },
-  { name: "Tesco Cheese & Onion Sandwich", type: "light", value: 3.2 }
+  { name: "Tesco Smoked Salmon Sushi", type: "balanced", value: 3.9 },
+{ name: "Tesco Korean Style Chicken Dragon Roll 175g", type: "comfort", value: 4.1 },
+{ name: "Pollen & Grace Mezze Houmous + Rainbow", type: "veg", value: 3.6 },
+{ name: "Grain Bowl", type: "veg", value: 2.75 },
+{ name: "Tesco Cheese & Onion Sandwich", type: "veg", value: 3.2 },
+{ name: "Itsu Vegetable Crunch Dragon Roll", type: "veg", value: 3.5 },
+{ name: "YO! Chicken Katsu Dragon Rolls", type: "comfort", value: 4.2 },
+{ name: "Tesco Korean Style Chicken Dragon Roll", type: "comfort", value: 4.0 }
 ];
 
 const snacks: Item[] = [
   { name: "Fridge Raiders Chicken Bites 45g", type: "protein", value: 3.5 },
   { name: "Tesco Carrot & Houmous 100g", type: "light", value: 3.0 },
-  { name: "Wall's Sausage Roll", type: "comfort", value: 3.8 },
-  { name: "Doritos Cool Original", type: "comfort", value: 3.2 },
-  { name: "Kettle Cheddar Chips", type: "comfort", value: 3.4 }
+  { name: "Wall's Sausage Roll 100g", type: "comfort", value: 3.8 },
+  { name: "Doritos Cool Original 44g", type: "comfort", value: 3.2 },
+  { name: "Kettle Cheddar Chips", type: "comfort", value: 3.4 },
+  { name: "Itsu Chicken Gyoza Snack Pot 47g", type: "protein", value: 3.8 },
+  { name: "Tesco Egg & Salad Cream 130g", type: "balanced", value: 3.4 },
+  { name: "Tesco Vegetable Sushi Snack 70g", type: "light", value: 3.3 }
+];
 ];
 
 const drinks: Item[] = [
   { name: "For Goodness Shakes Protein Shake", type: "protein", value: 3.9 },
   { name: "Naked Blue Machine Smoothie", type: "balanced", value: 3.6 },
-  { name: "Jimmy's Iced Coffee", type: "comfort", value: 3.5 },
-  { name: "Monster Energy Zero", type: "energy", value: 3.3 }
+  { name: "Jimmy's Iced Coffee", type: "energy", value: 3.5 },
+  { name: "Monster Energy Zero", type: "energy", value: 3.3 },
+  { name: "Shaken Udder Double Choc Milkshake 330ml", type: "comfort", value: 3.6 },
+  { name: "For Goodness Shakes Protein Chocolate 471ml", type: "protein", value: 4.0 },
+  { name: "Arla Protein Chocolate Milk 482ml", type: "protein", value: 3.9 },
+  { name: "Arla Protein Caramel Meal Shake 500ml", type: "protein", value: 4.1 }
+];
+ 
+];
+
 ];
 
 const emojiMap: Record<string, string> = {
@@ -54,7 +73,23 @@ const emojiMap: Record<string, string> = {
   "For Goodness Shakes Protein Shake": "🥛",
   "Naked Blue Machine Smoothie": "💙",
   "Jimmy's Iced Coffee": "☕",
-  "Monster Energy Zero": "⚡"
+  "Monster Energy Zero": "⚡",
+"Tesco Smoked Salmon Sushi": "🍣",
+"Tesco Korean Style Chicken Dragon Roll 175g": "🍱",
+"Tesco Korean Style Chicken Dragon Roll": "🍱",
+"Pollen & Grace Mezze Houmous + Rainbow": "🥙",
+"Grain Bowl": "🥗",
+"Itsu Vegetable Crunch Dragon Roll": "🍣",
+"YO! Chicken Katsu Dragon Rolls": "🍱",
+
+"Itsu Chicken Gyoza Snack Pot 47g": "🥟",
+"Tesco Egg & Salad Cream 130g": "🥚",
+"Tesco Vegetable Sushi Snack 70g": "🍣",
+
+"Shaken Udder Double Choc Milkshake 330ml": "🥤",
+"For Goodness Shakes Protein Chocolate 471ml": "🥤",
+"Arla Protein Chocolate Milk 482ml": "🥛",
+"Arla Protein Caramel Meal Shake 500ml": "🥤"
 };
 
 const justifications: Record<string, string[]> = {
