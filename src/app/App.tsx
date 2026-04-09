@@ -43,7 +43,6 @@ const snacks: Item[] = [
 ];
 
 const drinks: Item[] = [
-  { name: "For Goodness Shakes Protein Shake", type: "protein", value: 3.9 },
   { name: "Naked Blue Machine Smoothie", type: "balanced", value: 3.6 },
   { name: "Jimmy's Iced Coffee", type: "energy", value: 3.5 },
   { name: "Monster Energy Zero", type: "energy", value: 3.3 },
@@ -66,7 +65,6 @@ const emojiMap: Record<string, string> = {
   "Wall's Sausage Roll": "🌭",
   "Doritos Cool Original": "🔶",
   "Kettle Cheddar Chips": "🧀",
-  "For Goodness Shakes Protein Shake": "🥛",
   "Naked Blue Machine Smoothie": "💙",
   "Jimmy's Iced Coffee": "☕",
   "Monster Energy Zero": "⚡",
@@ -162,20 +160,35 @@ export default function App() {
     let preferredType = "";
 
     // Detect user preference
-    if (normalizedInput.includes("protein") || normalizedInput.includes("gym") || normalizedInput.includes("workout")) {
-      preferredType = "protein";
-    } else if (normalizedInput.includes("light") || normalizedInput.includes("fresh") || normalizedInput.includes("healthy")) {
-      preferredType = "light";
-    } else if (normalizedInput.includes("comfort") || normalizedInput.includes("treat") || normalizedInput.includes("hungry")) {
-      preferredType = "comfort";
-    } else if (normalizedInput.includes("energy") || normalizedInput.includes("tired") || normalizedInput.includes("boost")) {
-      preferredType = "energy";
-    }
+    const tags = normalizedInput.split(" ");
 
-    // Filter combinations by preferred type or get top combinations
-    let filteredCombos = preferredType
-      ? allCombinations.filter(c => c.dominantType === preferredType)
-      : allCombinations;
+const matchesInput = (item: Item) =>
+  tags.some(tag =>
+    item.name.toLowerCase().includes(tag) ||
+    item.type.toLowerCase().includes(tag)
+  );
+
+// Filter items FIRST based on search
+const filteredMains = mains.filter(matchesInput);
+const filteredSnacks = snacks.filter(matchesInput);
+const filteredDrinks = drinks.filter(matchesInput);
+
+
+	let filteredCombos = allCombinations.filter(c => {
+ 	 const matchMain =
+   	 filteredMains.length === 0 ||
+   	 filteredMains.some(m => m.name === c.main.name);
+
+ 	 const matchSnack =
+   	 filteredSnacks.length === 0 ||
+    	filteredSnacks.some(s => s.name === c.snack.name);
+
+ 	 const matchDrink =
+   	 filteredDrinks.length === 0 ||
+  	  filteredDrinks.some(d => d.name === c.drink.name);
+
+  	return matchMain && matchSnack && matchDrink;
+	});
 
     // If we have a current combo to exclude, filter it out
     if (excludeCurrent && filteredCombos.length > 1) {
