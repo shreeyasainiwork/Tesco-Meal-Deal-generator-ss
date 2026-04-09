@@ -53,9 +53,6 @@ const drinks: Item[] = [
   { name: "Arla Protein Caramel Meal Shake 500ml", type: "protein", value: 4.1 }
 ];
  
-];
-
-];
 
 const emojiMap: Record<string, string> = {
   "Tesco Chicken Triple Sandwich": "🥪",
