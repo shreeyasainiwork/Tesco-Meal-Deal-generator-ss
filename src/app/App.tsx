@@ -327,12 +327,12 @@ const filteredDrinks = drinks.filter(matchesInput);
               <div className="flex flex-col items-center gap-3">
                 <div className="flex gap-3 w-full">
                   <button
-                    onClick={handleTryAnother}
-                    disabled={isSpinning}
-                    className="flex-1 border border-[#32363a] text-[#32363a] px-6 py-2.5 rounded-[4px] text-sm font-medium hover:bg-[#32363a]/5 transition-colors disabled:opacity-50"
-                  >
-                    Try another combo
-                  </button>
+  			onClick={handleTryAnother}
+  			disabled={isSpinning}
+  			className="flex-1 border border-[#32363a] text-[#32363a] px-6 			py-2.5 rounded-[4px] text-sm font-medium hover:bg-[#32363a]/5 			transition-colors disabled:opacity-50"
+			>
+  			See other combos
+		</button>
                   <button
                     onClick={handleLoveThis}
                     disabled={isSpinning}
